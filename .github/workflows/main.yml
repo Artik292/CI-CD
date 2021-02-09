@@ -11,9 +11,12 @@ jobs:
 
       - name: Install dependencies
         run: composer require --dev phpunit/phpunit ^9
-
+        
       - name: PHPUnit
-        uses: chindit/actions-phpunit@master
+        run:  ./vendor/bin/phpunit tests
+
+#       - name: PHPUnit
+#         uses: chindit/actions-phpunit@master
         
 #       - uses: actions/checkout@v1
 #       # For YAML Actions, use v1 or later
