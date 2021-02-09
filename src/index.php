@@ -1,7 +1,9 @@
 <?php
+require 'Car.php';
+echo "<h1>Hello, World from Artik292!</h1> <br>";
+echo "<img src='images/image_1.jpg' alt='no image'> <br>";
 
-echo "Hello, World from Docker! <br>";
-echo "Hello ECS! <br>";
-echo '<img src="https://www.docker.com/sites/default/files/horizontal.png">';
+$car = new Car('green', 4);
 
+echo $car->GetColor();
 ?>
