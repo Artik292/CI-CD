@@ -4,6 +4,24 @@ on:
     branches:
       - main
 jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: PHPUnit
+        uses: chindit/actions-phpunit@master
+        
+#       - uses: actions/checkout@v1
+#       # For YAML Actions, use v1 or later
+#       - uses: pxgamer/phpunit-action@master
+#         with:
+#           # If there isn't a PHPUnit config, specify files or directories to test
+#           command:  ./vendor/bin/phpunit tests
+ 
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -17,3 +35,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: artik292/php-helloworld
           tag_with_ref: true
+          
+      
