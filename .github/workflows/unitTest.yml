@@ -41,7 +41,7 @@ jobs:
         run: ls tests -a
         
       - name: TMP TEST
-        run: ls .github/workflow -a
+        run: ls .github/workflows -a
         
       - name: Upload coverage to Codecov
         run: bash <(curl -s https://codecov.io/bash) -f ./coverage.xml
