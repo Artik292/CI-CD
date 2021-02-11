@@ -36,6 +36,9 @@ jobs:
       - name: "Run tests: Phpunit (only for Phpunit)"
 #         run: "vendor/bin/phpunit tests --coverage-text -v"
         run: "XDEBUG_MODE=coverage ./vendor/bin/phpunit tests --coverage-text ./clover.xml"
+      
+      - name: "Checker"
+        run: "ls -a"
 
       - name: Upload coverage logs (only for "latest" Phpunit)
 #         if: env.LOG_COVERAGE
