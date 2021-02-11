@@ -14,4 +14,14 @@ jobs:
 
       - name: PHPUnit
         run:  ./vendor/bin/phpunit tests
+  
+      - name: "Run tests: Phpunit (only for Phpunit)"
+        run: "./vendor/bin/phpunit tests \"$(if [ -n \"$LOG_COVERAGE\" ]; then echo '--coverage-text'; else echo '--no-coverage'; fi)\" -v"
+
+      - name: Upload coverage logs (only for "latest" Phpunit)
+        if: env.LOG_COVERAGE
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: build/logs/clover.xml
 
