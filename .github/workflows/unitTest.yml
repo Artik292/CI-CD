@@ -18,17 +18,17 @@ jobs:
       - name: Install dependencies
         run: composer require --dev phpunit/phpunit ^9
 
-#       - name: Setup cache 1/2
-#         id: composer-cache
-#         run: |
-#           echo "::set-output name=dir::$(composer config cache-files-dir)"
-#       - name: Setup cache 2/2
-#         uses: actions/cache@v1
-#         with:
-#           path: ${{ steps.composer-cache.outputs.dir }}
-#           key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ matrix.type }}-${{ hashFiles('composer.json') }}
-#           restore-keys: |
-#             ${{ runner.os }}-composer-
+      - name: Setup cache 1/2
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Setup cache 2/2
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ matrix.type }}-${{ hashFiles('composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
             
       - name: Init
         run: |
