@@ -43,8 +43,20 @@ jobs:
       - name: TMP TEST
         run: ls .github/workflows -a
         
+      - name: "Run test suite"
+        run: "vendor/bin/phpunit tests --coverage-clover=coverage.xml"
       - name: Upload coverage to Codecov
-        run: bash <(curl -s https://codecov.io/bash) -f ./coverage.xml
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
+          flags: tests
+          name: codecov-umbrella
+          yml: ./codecov.yml
+          fail_ci_if_error: true
+        
+#       - name: Upload coverage to Codecov
+#         run: bash <(curl -s https://codecov.io/bash) -f ./coverage.xml
 
 
 
