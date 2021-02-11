@@ -1,27 +1,80 @@
-name: Publish Docker image
+name: "Unit test"
+ 
 on:
   push:
     branches:
       - main
+ 
 jobs:
-  phpunit:
+  build:
+    name: PHP ${{ matrix.php-versions }}
     runs-on: ubuntu-latest
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         php-versions: ['7.2', '7.3', '7.4']
     steps:
+#       - name: Setup PHP Action
+#         uses: shivammathur/setup-php@1.8.2
+#         with:
+#           extensions: intl
+#           php-version: "${{ matrix.php-versions }}"
+#           coverage: pcov
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: "Validate composer.json and composer.lock"
+#         run: "composer validate"
+#       - name: "Install dependencies"
+#         run: "composer install --prefer-dist --no-progress --no-suggest && composer development-enable"
       - uses: actions/checkout@v2
 
       - name: Install dependencies
         run: composer require --dev phpunit/phpunit ^9
 
-      - name: PHPUnit
-        run:  ./vendor/bin/phpunit tests
-  
-      - name: "Run tests: Phpunit (only for Phpunit)"
-        run: "./vendor/bin/phpunit tests \"$(if [ -n \"$LOG_COVERAGE\" ]; then echo '--coverage-text'; else echo '--no-coverage'; fi)\" -v"
-
-      - name: Upload coverage logs (only for "latest" Phpunit)
-        if: env.LOG_COVERAGE
+      - name: "Run test suite"
+        run: "vendor/bin/phpunit tests --coverage-clover=coverage.xml"
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: build/logs/clover.xml
+          file: ./coverage.xml
+          flags: tests
+          name: codecov-umbrella
+          yml: ./codecov.yml
+          fail_ci_if_error: true
+
+
+
+
+
+
+
+
+# name: Publish Docker image
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   phpunit:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: Install dependencies
+#         run: composer require --dev phpunit/phpunit ^9
+
+#       - name: PHPUnit
+#         run:  ./vendor/bin/phpunit tests
+  
+#       - name: "Run tests: Phpunit (only for Phpunit)"
+#         run: "./vendor/bin/phpunit tests \"$(if [ -n \"$LOG_COVERAGE\" ]; then echo '--coverage-text'; else echo '--no-coverage'; fi)\" -v"
+
+#       - name: Upload coverage logs (only for "latest" Phpunit)
+#         if: env.LOG_COVERAGE
+#         uses: codecov/codecov-action@v1
+#         with:
+#           token: ${{ secrets.CODECOV_TOKEN }}
+#           file: build/logs/clover.xml
+
 
