@@ -44,7 +44,7 @@ jobs:
         run: ls .github/workflows -a
         
       - name: "Run test suite"
-        run: "vendor/bin/phpunit tests --coverage-clover=coverage.xml"
+        run: "vendor/bin/phpunit tests --coverage-clover ./coverage.xml"
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
