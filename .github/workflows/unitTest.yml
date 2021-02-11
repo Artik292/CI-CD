@@ -34,7 +34,8 @@ jobs:
         run: |
           mkdir -p build/logs
       - name: "Run tests: Phpunit (only for Phpunit)"
-        run: "vendor/bin/phpunit tests --coverage-text -v"
+#         run: "vendor/bin/phpunit tests --coverage-text -v"
+        run: "XDEBUG_MODE=coverage ./vendor/bin/phpunit tests --coverage-text"
 
       - name: Upload coverage logs (only for "latest" Phpunit)
 #         if: env.LOG_COVERAGE
