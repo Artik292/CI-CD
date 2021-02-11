@@ -35,7 +35,13 @@ jobs:
         run: "./vendor/bin/phpunit tests xdebug.mode=coverage --coverage-clover=coverage.xml"
         
       - name: TMP TEST
-        run: ls
+        run: ls -a
+        
+      - name: TMP TEST
+        run: ls tests -a
+        
+      - name: TMP TEST
+        run: ls .github -a
         
       - name: Upload coverage to Codecov
         run: bash <(curl -s https://codecov.io/bash) -f ./coverage.xml
