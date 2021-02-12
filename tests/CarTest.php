@@ -1,15 +1,23 @@
 <?php
 
   use PHPUnit\Framework\TestCase;
-
+  /**
+   * @coversDefaultClass Car
+   */
   class CarTest extends TestCase
 {
+    /**
+    * @covers Car::GetColor
+    */
     public function testCarGoodColor(): void
     {
        $car = new Car('Green', 4);
        $this->assertSame('Green', $car->GetColor());
     }
 
+    /**
+    * @covers Car::init
+    */
     public function testCarBadDoor()
     {
        // $car = new Car('Green', 4);

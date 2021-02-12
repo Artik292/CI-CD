@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -29,25 +29,29 @@ jobs:
           key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ matrix.type }}-${{ hashFiles('composer.json') }}
           restore-keys: |
             ${{ runner.os }}-composer-
-            
+
       - name: Init
         run: |
           mkdir -p build/logs
       - name: "Run tests: Phpunit (only for Phpunit)"
+        run: "./vendor/bin/phpunit tests"
 #         run: "vendor/bin/phpunit tests --coverage-text -v"
-        run: "XDEBUG_MODE=coverage ./vendor/bin/phpunit tests --coverage-text ./clover.xml"
-      
+#        run: "./vendor/bin/phpunit tests  --coverage-text=tests/coverage/report.txt"
+
       - name: "Checker"
         run: "ls -a"
+
+      - name: "Checker+"
+        run: "ls cache -a"
 
       - name: Upload coverage logs (only for "latest" Phpunit)
 #         if: env.LOG_COVERAGE
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: clover.xml
+          file: cache/test-results
 
- 
+
 # jobs:
 #   build:
 #     name: PHP ${{ matrix.php-versions }}
@@ -60,12 +64,12 @@ jobs:
 
 #       - name: "Run test suite"
 #         run: "vendor/bin/phpunit tests --coverage-clover ./coverage.xml"
-        
+
 #       - name: TMP TEST
 #         run: ls -a
-        
+
 #       - name: TMP TEST
 #         run: ls tests -a
-        
+
 #       - name: TMP TEST
 #         run: ls .github/workflows -a
