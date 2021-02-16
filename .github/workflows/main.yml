@@ -29,8 +29,8 @@ jobs:
       - name: Composer install
         run: composer require --dev phpunit/phpunit ^9
         
-      - name: Random we fix
-        run: sudo apt-get install lsb-core
+      - name: Random web fix
+        run: npm install lsb-release
         
       - name: Setup PHP Action
         uses: shivammathur/setup-php@2.9.0
