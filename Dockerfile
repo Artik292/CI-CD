@@ -1,5 +1,5 @@
 # FROM php:7.0-apache
-FROM php:7.2-fpm
+FROM php:8.0-apache
 FROM composer:latest
 COPY src/ /var/www/html
 # RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
