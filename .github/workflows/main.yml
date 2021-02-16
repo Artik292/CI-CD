@@ -22,7 +22,7 @@ jobs:
   phpunit:
     runs-on: ubuntu-latest
     container:
-      image: artik292/php-helloworld
+      image: artik292/php-helloworld:main
     steps:
       - uses: actions/checkout@v2
       
