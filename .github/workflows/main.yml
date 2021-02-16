@@ -21,6 +21,8 @@ jobs:
 
   phpunit:
     runs-on: ubuntu-latest
+    container:
+      image: artik292/php-helloworld
     steps:
       - uses: actions/checkout@v2
 
