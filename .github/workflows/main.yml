@@ -26,9 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: composer require --dev phpunit/phpunit ^9
-
       - name: PHPUnit
         run:  ./vendor/bin/phpunit tests --coverage-clover ./coverage.xml
 
