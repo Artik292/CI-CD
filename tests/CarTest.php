@@ -20,6 +20,16 @@
        $car = new Car('Yellow','Five');
     }
 
+    public function testBipBip()
+    {
+       // $car = new Car('Green', 4);
+       // $this->assertSame('Green', $car->GetColor());
+       //$this->expectException(new Car('Yellow','Five'));
+       $this->expectOutputString("Bip Bip");
+       $car = new Car('Yellow', 4);
+       $car->MakeSound();
+    }
+
     // public function testCannotBeCreatedFromInvalidEmailAddress(): void
     // {
     //     $this->expectException(InvalidArgumentException::class);
