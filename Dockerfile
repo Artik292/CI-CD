@@ -7,8 +7,6 @@ COPY src/ /var/www/html
 
 RUN wget http://xdebug.org/files/xdebug-2.6.0.tgz
 RUN tar -xvzf xdebug-2.6.0.tgz
-RUN ls
-RUN ls xdebug-2.6.0
 # RUN xdebug-2.6.0/phpize
 # RUN xdebug-2.6.0/configure
 # RUN xdebug-2.6.0/make
@@ -18,7 +16,7 @@ RUN ls xdebug-2.6.0
 # RUN echo "xdebug.remote_enable = 1" >> /etc/php/7.2/fpm/conf.d/20-xdebug.ini
 # RUN echo "xdebug.remote_connect_back = 1" >> /etc/php/7.2/fpm/conf.d/20-xdebug.ini
 # RUN echo "xdebug.remote_port = 9000" >> /etc/php/7.2/fpm/conf.d/20-xdebug.ini
-RUN service php7.2-fpm restart
+# RUN service php7.2-fpm restart
 
 
 # RUN wget php-xdebug
@@ -32,9 +30,9 @@ RUN service php7.2-fpm restart
 # RUN echo "xdebug.remote_mode = req" >> /etc/php/7.0/mods-available/xdebug.ini
 # RUN echo "xdebug.remote_port = 9005" >> /etc/php/7.0/mods-available/xdebug.ini
 
-RUN systemctl restart php7.0-fpm
-RUN systemctl restart nginx # If you are using nginx server
-RUN systemctl restart apache2 # If you are using apache server
+# RUN systemctl restart php7.0-fpm
+# RUN systemctl restart nginx # If you are using nginx server
+# RUN systemctl restart apache2 # If you are using apache server
 
 RUN composer require --dev phpunit/phpunit ^9
 EXPOSE 80
