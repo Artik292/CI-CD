@@ -25,6 +25,9 @@ jobs:
       image: artik292/php-helloworld:main
     steps:
       - uses: actions/checkout@v2
+    
+      - name: Composer install
+        run: composer require --dev phpunit/phpunit ^9
       
       - name: Test
         run:  composer show -i
