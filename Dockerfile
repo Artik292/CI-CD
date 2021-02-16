@@ -4,6 +4,8 @@ COPY src/ /var/www/html
 # RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 # RUN apt-get install curl php-cli php-mbstring git unzip
 
+RUN apt-get update && apt-get install
+
 RUN apt-get php-xdebug
 
 RUN echo "zend_extension=/usr/lib/php/20151012/xdebug.so" >> /etc/php/7.0/mods-available/xdebug.ini
