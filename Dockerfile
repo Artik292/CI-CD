@@ -9,10 +9,10 @@ RUN wget http://xdebug.org/files/xdebug-2.6.0.tgz
 RUN tar -xvzf xdebug-2.6.0.tgz
 RUN ls
 RUN ls xdebug-2.6.0
-RUN xdebug-2.6.0/phpize
-RUN xdebug-2.6.0/configure
-RUN xdebug-2.6.0/make
-RUN cp xdebug-2.6.0/modules/xdebug.so /usr/lib/php/20170718
+# RUN xdebug-2.6.0/phpize
+# RUN xdebug-2.6.0/configure
+# RUN xdebug-2.6.0/make
+# RUN cp xdebug-2.6.0/modules/xdebug.so /usr/lib/php/20170718
 RUN echo "zend_extension = /usr/lib/php/20170718/xdebug.so" >> /etc/php/7.2/cli/php.ini
 RUN echo "zend_extension = /usr/lib/php/20170718/xdebug.so" >> /etc/php/7.2/fpm/conf.d/20-xdebug.ini
 RUN echo "xdebug.remote_enable = 1" >> /etc/php/7.2/fpm/conf.d/20-xdebug.ini
