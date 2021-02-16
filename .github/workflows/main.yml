@@ -25,6 +25,9 @@ jobs:
       image: artik292/php-helloworld
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Test
+        run:  composer --version
 
       - name: PHPUnit
         run:  ./vendor/bin/phpunit tests --coverage-clover ./coverage.xml
