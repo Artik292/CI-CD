@@ -28,6 +28,9 @@
        $car = new Car('Yellow','Five');
     }
 
+    /**
+    * @covers BasicCar::MakeSound
+    */
     public function testBipBip()
     {
        // $car = new Car('Green', 4);
