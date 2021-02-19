@@ -26,12 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Setup PHP with pre-release PECL extension
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.4'
-          extensions: xdebug-beta
-      
       - name: Composer install
         run: composer require --dev phpunit/phpunit ^9
 
@@ -42,4 +36,4 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage.xml
+          file: https://github.com/Artik292/CI-CD/blob/main/cache/clover.xml
