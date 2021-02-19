@@ -26,7 +26,7 @@
     }
 
     /**
-    * @covers Car::init
+    * @covers Car::__construct
     */
     public function testCarBadDoors()
     {
