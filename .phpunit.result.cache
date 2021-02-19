@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":262:{a:2:{s:7:"defects";a:3:{s:25:"CarTest::testCarGoodColor";i:4;s:23:"CarTest::testCarBadDoor";i:6;s:19:"CarTest::testBipBip";i:4;}s:5:"times";a:3:{s:25:"CarTest::testCarGoodColor";d:0.045;s:23:"CarTest::testCarBadDoor";d:0.012;s:19:"CarTest::testBipBip";d:0.003;}}}

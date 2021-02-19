@@ -1,1 +1,5 @@
+<<<<<<< Updated upstream
 C:37:"PHPUnit\Runner\DefaultTestResultCache":124:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:2:{s:25:"CarTest::testCarGoodColor";d:0.016;s:23:"CarTest::testCarBadDoor";d:0.004;}}}
+=======
+C:37:"PHPUnit\Runner\DefaultTestResultCache":887:{a:2:{s:7:"defects";a:9:{s:25:"CarTest::testCarGoodColor";i:3;s:23:"CarTest::testCarBadDoor";i:5;s:19:"CarTest::testBipBip";i:5;s:40:"artik292\tests\CarTest::testCarGoodColor";i:4;s:38:"artik292\tests\CarTest::testCarBadDoor";i:3;s:34:"artik292\tests\CarTest::testBipBip";i:4;s:29:"aaa\CarTest::testCarGoodColor";i:4;s:29:"bbb\CarTest::testCarGoodColor";i:4;s:34:"artik292\CarTest::testCarGoodColor";i:4;}s:5:"times";a:10:{s:25:"CarTest::testCarGoodColor";d:0.064;s:23:"CarTest::testCarBadDoor";d:0.001;s:19:"CarTest::testBipBip";d:0.004;s:40:"artik292\tests\CarTest::testCarGoodColor";d:0.055;s:38:"artik292\tests\CarTest::testCarBadDoor";d:0.079;s:34:"artik292\tests\CarTest::testBipBip";d:0.001;s:29:"aaa\CarTest::testCarGoodColor";d:0.005;s:29:"bbb\CarTest::testCarGoodColor";d:0.073;s:34:"artik292\CarTest::testCarGoodColor";d:0.05;s:33:"artik29\CarTest::testCarGoodColor";d:0.053;}}}
+>>>>>>> Stashed changes

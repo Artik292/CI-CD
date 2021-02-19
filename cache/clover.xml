@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1613730909">
+  <project timestamp="1613730909">
+    <file name="/Applications/CI-CD/src/BasicCar.php">
+      <class name="BasicCar" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      </class>
+      <line num="8" type="method" name="MakeSound" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="9" type="stmt" count="1"/>
+      <line num="10" type="stmt" count="1"/>
+      <metrics loc="11" ncloc="7" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+    </file>
+    <file name="/Applications/CI-CD/src/Car.php">
+      <class name="Car" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="4" elements="8" coveredelements="5"/>
+      </class>
+      <line num="11" type="method" name="__construct" visibility="public" complexity="2" crap="2.26" count="1"/>
+      <line num="13" type="stmt" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <line num="15" type="stmt" count="0"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="0"/>
+      <line num="21" type="method" name="GetColor" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <metrics loc="25" ncloc="21" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="4" elements="8" coveredelements="5"/>
+    </file>
+    <file name="/Applications/CI-CD/src/index.php">
+      <line num="2" type="stmt" count="0"/>
+      <line num="3" type="stmt" count="0"/>
+      <line num="4" type="stmt" count="0"/>
+      <line num="6" type="stmt" count="0"/>
+      <line num="8" type="stmt" count="0"/>
+      <metrics loc="9" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="5" coveredelements="0"/>
+    </file>
+    <metrics files="3" loc="45" ncloc="37" classes="2" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="6" elements="16" coveredelements="8"/>
+  </project>
+</coverage>

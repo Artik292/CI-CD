@@ -1,5 +1,6 @@
 <?php
 
+  include_once __DIR__."/../src/Car.php";
   use PHPUnit\Framework\TestCase;
   /**
    * @coversDefaultClass Car
