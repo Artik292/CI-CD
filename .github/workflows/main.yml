@@ -31,9 +31,12 @@ jobs:
 
       - name: PHPUnit
         run:  ./vendor/bin/phpunit tests --coverage-clover ./coverage.xml
+      
+      - name: Kastil
+        run: wget "https://github.com/Artik292/CI-CD/blob/main/cache/clover.xml"
 
       - name: CodeCov
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: https://github.com/Artik292/CI-CD/blob/main/cache/clover.xml
+          file: ./clover.xml
