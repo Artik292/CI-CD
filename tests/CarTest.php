@@ -17,9 +17,18 @@
     }
 
     /**
+    * @covers Car::__construct
+    */
+    public function testCarGoodDoors(): void
+    {
+       $car = new Car('Green', 4);
+       $this->assertSame(4, $car->door_count);
+    }
+
+    /**
     * @covers Car::init
     */
-    public function testCarBadDoor()
+    public function testCarBadDoors()
     {
        // $car = new Car('Green', 4);
        // $this->assertSame('Green', $car->GetColor());

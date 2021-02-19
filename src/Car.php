@@ -12,7 +12,7 @@ require 'BasicCar.php';
     {
       $this->color = $color;
       if (is_int($door_count)) {
-          $this->$door_count = $door_count;
+          $this->door_count = $door_count;
       } else {
           throw new Exception('Wrong input.');
       }
