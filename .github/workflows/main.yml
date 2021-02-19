@@ -29,14 +29,17 @@ jobs:
       - name: Composer install
         run: composer require --dev phpunit/phpunit ^9
 
-      - name: Xdebug Action
-        uses: MilesChou/docker-xdebug@master
-
       - name: PHPUnit
         run:  ./vendor/bin/phpunit tests --coverage-clover ./coverage.xml
+      
+      - name: Kastil
+        run: wget "https://github.com/Artik292/CI-CD/blob/main/cache/clover.xml"
+        
+      - name: A gde
+        run: ls -a
 
       - name: CodeCov
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage.xml
+          file: ./clover.xml
