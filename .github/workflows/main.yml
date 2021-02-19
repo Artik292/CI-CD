@@ -34,6 +34,9 @@ jobs:
       
       - name: Kastil
         run: wget "https://github.com/Artik292/CI-CD/blob/main/cache/clover.xml"
+        
+      - name: A gde
+        run: ls -a
 
       - name: CodeCov
         uses: codecov/codecov-action@v1
